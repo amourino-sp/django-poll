@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    {% if not questions %}
+        <p>
+            {% trans "No questions." %}
+        </p>
+    {% else %}
+        <ul>
+            {% for question in questions %}
+                <li>
+                    <a href="{{ question.get_absolute_url }}">{{ question }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

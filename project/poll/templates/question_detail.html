@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block page_title %}
+    {{ question.question}}
+{% endblock %}
+
+{% block content %}
+    <h1>
+        {{ question.question }}
+    </h1>
+    <a href="{% url question_list %}">{% trans "Back" %}</a>
+    {% if question.options.all.count %}
+        <ul>
+            {% for option in question.options.all %}
+                <li>
+                    {{ option.answer}} - {{ option.votes}}
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="option_id" value="{{ option.id }}">
+                        <input type="submit" value="{% trans "Vote" %}">
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

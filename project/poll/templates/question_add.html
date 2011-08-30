@@ -1,0 +1,6 @@
+{% load i18n %}
+<form enctype="multipart/form-data" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="submit" value="{% trans "Save" %}">
+</form>
