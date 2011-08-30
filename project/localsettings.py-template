@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
+# 'django.contrib.gis.db.backends.postgis'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': 'django.db.backends.',  # 'sqlite3', 'mysql', 'psycopg2'
         'NAME': '',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '',
         'PORT': '',
     }
