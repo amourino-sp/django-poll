@@ -113,3 +113,8 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from localsettings import *
+except ImportError:
+    sys.stderr.write("Can't find local.py settings, using default settings.\n")
