@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+ADMINS = (
+    (u'Nombre','mail@mail.com')
+)
+MANAGERS = ADMINS
+
 # 'django.contrib.gis.db.backends.postgis'
 DATABASES = {
     'default': {

@@ -10,8 +10,6 @@ if PROJECT_ABSOLUTE_DIR not in sys.path:
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-MANAGERS = ADMINS
-
 TIME_ZONE = 'America/Montevideo'
 
 # Language code for this installation. All choices can be found here:
@@ -49,7 +47,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    STATIC_ROOT = join(PROJECT_ABSOLUTE_DIR, 'poll/static/')
+    join(PROJECT_ABSOLUTE_DIR, 'poll/static/'),
 )
 
 # List of finder classes that know how to find static files in
@@ -78,10 +76,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = '.'.join(PROJECT_NAME, 'urls')
+ROOT_URLCONF = '.'.join((PROJECT_NAME, 'urls'))
 
 TEMPLATE_DIRS = (
-    MEDIA_ROOT = join(PROJECT_ABSOLUTE_DIR, 'templates'),
+    join(PROJECT_ABSOLUTE_DIR, 'templates'),
 )
 
 INSTALLED_APPS = (
