@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class Question(models.Model):
@@ -57,3 +59,8 @@ class Option(models.Model):
     class Meta:
         verbose_name = _('Option')
         verbose_name_plural = _('Options')
+
+
+@receiver(post_save, sender=User)
+def welcome_message(sender, **kwargs):
+    pass
